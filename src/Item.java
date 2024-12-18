@@ -10,8 +10,32 @@ public class Item {
         this.itemQuality = new IntegerWrapper(itemQuality);
     }
 
+    public StringWrapper getItemName() {
+        return itemName;
+    }
+
+    public IntegerWrapper getDaysRemainingBeforeExpiration() {
+        return daysRemainingBeforeExpiration;
+    }
+
+    public void setDaysRemainingBeforeExpiration(IntegerWrapper daysRemainingBeforeExpiration) {
+        this.daysRemainingBeforeExpiration = daysRemainingBeforeExpiration;
+    }
+
+    public IntegerWrapper getItemQuality() {
+        return itemQuality;
+    }
+
+    public void setItemQuality(IntegerWrapper itemQuality) {
+        this.itemQuality = itemQuality;
+    }
+
+
     @Override
     public String toString() {
-        return this.itemName + ", " + this.daysRemainingBeforeExpiration + ", " + this.itemQuality;
+        return "Item: " + this.itemName + ", Days Remaining: " + this.daysRemainingBeforeExpiration + ", Quality: " + this.itemQuality;
     }
 }
+
+
+
