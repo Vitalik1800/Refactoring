@@ -1,41 +1,32 @@
 public class Item {
-
-    public StringWrapper itemName;
-    public IntegerWrapper daysRemainingBeforeExpiration;
-    public IntegerWrapper itemQuality;
+    private ItemData itemData;
 
     public Item(String itemName, int daysRemainingBeforeExpiration, int itemQuality) {
-        this.itemName = new StringWrapper(itemName);
-        this.daysRemainingBeforeExpiration = new IntegerWrapper(daysRemainingBeforeExpiration);
-        this.itemQuality = new IntegerWrapper(itemQuality);
+        this.itemData = new ItemData(new StringWrapper(itemName), new IntegerWrapper(daysRemainingBeforeExpiration), new IntegerWrapper(itemQuality));
     }
 
     public StringWrapper getItemName() {
-        return itemName;
+        return itemData.getItemName();
     }
 
     public IntegerWrapper getDaysRemainingBeforeExpiration() {
-        return daysRemainingBeforeExpiration;
-    }
-
-    public void setDaysRemainingBeforeExpiration(IntegerWrapper daysRemainingBeforeExpiration) {
-        this.daysRemainingBeforeExpiration = daysRemainingBeforeExpiration;
+        return itemData.getDaysRemainingBeforeExpiration();
     }
 
     public IntegerWrapper getItemQuality() {
-        return itemQuality;
+        return itemData.getItemQuality();
+    }
+
+    public void setDaysRemainingBeforeExpiration(IntegerWrapper daysRemainingBeforeExpiration) {
+        itemData.setDaysRemainingBeforeExpiration(daysRemainingBeforeExpiration);
     }
 
     public void setItemQuality(IntegerWrapper itemQuality) {
-        this.itemQuality = itemQuality;
+        itemData.setItemQuality(itemQuality);
     }
-
 
     @Override
     public String toString() {
-        return "Item: " + this.itemName + ", Days Remaining: " + this.daysRemainingBeforeExpiration + ", Quality: " + this.itemQuality;
+        return "Item: " + this.getItemName() + ", DaysRemaining: " + this.getDaysRemainingBeforeExpiration() + ", Quality: " + this.getItemQuality();
     }
 }
-
-
-
