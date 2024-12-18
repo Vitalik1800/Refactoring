@@ -7,7 +7,6 @@ public class Item {
     }
 
     // Замість getter/setter, доступ до полів здійснюється через об'єкти itemData.
-    // Ви можете взаємодіяти з itemData без необхідності створювати додаткові методи для доступу.
     public String toString() {
         return "Item: " + itemData.itemName + ", DaysRemaining: " + itemData.daysRemainingBeforeExpiration + ", Quality: " + itemData.itemQuality;
     }

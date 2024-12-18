@@ -1,7 +1,7 @@
 public class GildedRose {
 
     private final ItemCollection itemCollection;
-    private ItemUpdater itemUpdater;
+    private final ItemUpdater itemUpdater;
 
     public GildedRose(ItemCollection itemCollection) {
         this.itemCollection = itemCollection;

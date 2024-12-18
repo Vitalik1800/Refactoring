@@ -1,6 +1,6 @@
 public class StringWrapper {
 
-    private String value;
+    private final String value;
 
     public StringWrapper(String value) {
         this.value = value;
