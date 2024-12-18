@@ -1,4 +1,4 @@
-class GildedRose {
+public class GildedRose {
 
     private final ItemCollection itemCollection;
     private ItemUpdater itemUpdater;
@@ -9,7 +9,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        itemUpdater.updateAllItemsQuality(itemCollection.getItems());
+        itemUpdater.updateAllItemsQuality(itemCollection.items);
     }
-
 }

@@ -1,20 +1,20 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemCollection {
-    private List<Item> items;
+    public final List<Item> items;
 
+    // Конструктор для ініціалізації
     public ItemCollection() {
         this.items = new ArrayList<>();
     }
 
+    // Додавання елементів без getter
     public void addItem(Item item) {
         items.add(item);
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
+    // Створюємо власну строкову репрезентацію колекції
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

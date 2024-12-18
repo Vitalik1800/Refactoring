@@ -1,17 +1,21 @@
 public class IntegerWrapper {
 
-    private int value;
+    public int value;
 
     public IntegerWrapper(int value) {
         this.value = value;
     }
 
-    public int getValue() {
-        return value;
+    public void increment() {
+        if (value < 50) {
+            value++;
+        }
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void decrement() {
+        if (value > 0) {
+            value--;
+        }
     }
 
     @Override
