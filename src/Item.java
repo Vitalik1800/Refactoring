@@ -1,17 +1,17 @@
 public class Item {
 
-    public StringWrapper name;
-    public IntegerWrapper sellIn;
-    public IntegerWrapper quality;
+    public StringWrapper itemName;
+    public IntegerWrapper daysRemainingBeforeExpiration;
+    public IntegerWrapper itemQuality;
 
-    public Item(String name, int sellIn, int quality) {
-        this.name = new StringWrapper(name);
-        this.sellIn = new IntegerWrapper(sellIn);
-        this.quality = new IntegerWrapper(quality);
+    public Item(String itemName, int daysRemainingBeforeExpiration, int itemQuality) {
+        this.itemName = new StringWrapper(itemName);
+        this.daysRemainingBeforeExpiration = new IntegerWrapper(daysRemainingBeforeExpiration);
+        this.itemQuality = new IntegerWrapper(itemQuality);
     }
 
     @Override
     public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
+        return this.itemName + ", " + this.daysRemainingBeforeExpiration + ", " + this.itemQuality;
     }
 }
