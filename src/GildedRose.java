@@ -17,7 +17,7 @@ class GildedRose {
     }
 
     private boolean isLegendary(Item item) {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
+        return item.name.getValue().equals("Sulfuras, Hand of Ragnaros");
     }
 
     private void updateItemQuality(Item item) {
@@ -30,55 +30,53 @@ class GildedRose {
     }
 
     private boolean isSpecialItem(Item item) {
-        return item.name.equals("Aged Brie") || item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+        return item.name.getValue().equals("Aged Brie") || item.name.getValue().equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
     private void increaseQuality(Item item) {
-        if(item.quality < 50){
-            item.quality++;
+        if(item.quality.getValue() < 50){
+            item.quality.setValue(item.quality.getValue() + 1);
         }
     }
 
     private void decreaseQuality(Item item) {
-        if(item.quality > 0){
-            item.quality--;
+        if(item.quality.getValue() > 0){
+            item.quality.setValue(item.quality.getValue() - 1);
         }
     }
 
     private void handleSpecialCases(Item item) {
-        if(!item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
+        if(!item.name.getValue().equals("Backstage passes to a TAFKAL80ETC concert")){
             return;
         }
 
-        if(item.sellIn < 11){
+        if(item.sellIn.getValue() < 11){
             increaseQuality(item);
         }
-        if(item.sellIn < 6){
+        if(item.sellIn.getValue() < 6){
             increaseQuality(item);
         }
     }
 
     private void updateSellIn(Item item) {
-        item.sellIn--;
+        item.sellIn.setValue(item.sellIn.getValue() - 1);
     }
 
     private void handleExpiredItem(Item item) {
-        if(item.sellIn >= 0){
+        if(item.sellIn.getValue() >= 0){
             return;
         }
 
-        if(item.name.equals("Aged Brie")){
+        if(item.name.getValue().equals("Aged Brie")){
             increaseQuality(item);
             return;
         }
 
-        if(item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
-            item.quality = 0;
+        if(item.name.getValue().equals("Backstage passes to a TAFKAL80ETC concert")){
+            item.quality.setValue(0);
             return;
         }
 
         decreaseQuality(item);
     }
-
-
 }

@@ -1,13 +1,13 @@
 public class Item {
 
-    public String name;
-    public int sellIn;
-    public int quality;
+    public StringWrapper name;
+    public IntegerWrapper sellIn;
+    public IntegerWrapper quality;
 
     public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        this.name = new StringWrapper(name);
+        this.sellIn = new IntegerWrapper(sellIn);
+        this.quality = new IntegerWrapper(quality);
     }
 
     @Override
